@@ -1,12 +1,13 @@
+import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
-import {cn} from '@/lib/utils';
+import { cn } from '@/lib/utils';
 import {
-    SiPython, SiJavascript, SiHtml5, SiCss3, SiReact, SiTailwindcss, SiNextdotjs,
-    SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiNumpy, SiScikitlearn,
-    SiGit, SiDocker, SiObsidian, SiCanva, SiN8N, SiQt, SiSupabase, SiFastapi, SiSqlalchemy
+    SiPython, SiJavascript, SiHtml5, SiReact, SiTailwindcss, SiShadcnui, SiPostgresql, SiNumpy, SiScikitlearn,
+    SiGit, SiObsidian, SiCanva, SiN8N, SiQt, SiSupabase, SiFastapi, SiSqlalchemy,SiGooglecolab,SiVercel,SiPostman,SiArchlinux
 } from "react-icons/si";
 
 import { VscVscode } from "react-icons/vsc";
+import { FaWindows } from "react-icons/fa";
 
 const skills = [
 
@@ -16,8 +17,8 @@ const skills = [
 
     // Frontend
     { name: "HTML5", category: "frontend", icon: <SiHtml5 size={20} /> },
-    { name: "CSS3", category: "frontend", icon: <SiCss3 size={20} /> },
     { name: "Tailwind CSS", category: "frontend", icon: <SiTailwindcss size={20} /> },
+    { name: "Shadcn", category: "frontend", icon: <SiShadcnui size={20} /> },
     { name: "React", category: "frontend", icon: <SiReact size={20} /> },
 
     // Backend
@@ -27,22 +28,27 @@ const skills = [
     { name: "SQLAlchemy", category: "backend", icon: <SiSqlalchemy size={20} /> },
 
     // AI/ML
-    { name: "N8N", category: "machine learning", icon: <SiN8N size={20} /> },
-    { name: "Numpy", category: "machine learning", icon: <SiNumpy size={20} /> },
-    { name: "Scikit-learn", category: "machine learning", icon: <SiScikitlearn size={20} /> },
+    { name: "Numpy", category: "AI/ML", icon: <SiNumpy size={20} /> },
+    { name: "Scikit-learn", category: "AI/ML", icon: <SiScikitlearn size={20} /> },
 
     // Desktop Application
     { name: "PyQt", category: "desktop", icon: <SiQt size={20} /> },
 
     // Tools
-    { name: "Git/GitHub", category: "tools", icon: <SiGit size={20} /> },
+    { name: "Git", category: "tools", icon: <SiGit size={20} /> },
+    { name: "N8N", category: "tools", icon: <SiN8N size={20} /> },
+    { name: "Google Colab", category: "tools", icon: <SiGooglecolab size={20} /> },
+    { name: "Vercel", category: "tools", icon: <SiVercel size={20} /> },
+    { name: "Postman", category: "tools", icon: <SiPostman size={20} /> },
     { name: "Obsidian", category: "tools", icon: <SiObsidian size={20} /> },
     { name: "Canva", category: "tools", icon: <SiCanva size={20} /> },
-    { name: "VS Code", category: "tools", icon: <VscVscode size={20} /> },
+    { name: "Visual Studio Code", category: "tools", icon: <VscVscode size={20} /> },
+    { name: "Arch Linux", category: "tools", icon: <SiArchlinux size={20} /> },
+    { name: "Windows", category: "tools", icon: <FaWindows size={20} /> },
 
 ];
 
-const categories = ["programing language", "frontend", "backend", "machine learning", "desktop", "tools"];
+const categories = ["programing language", "frontend", "backend", "AI/ML", "desktop", "tools"];
 
 export const SkillsSection = () => {
 
@@ -62,29 +68,28 @@ export const SkillsSection = () => {
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     {categories.map((category, key) => (
                         <button
-                        key={key}
-                        onClick={(() => setActiveCategory(category))}
-                        className={cn(
-                            "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                            activeCategory === category ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover:bg-secondary"
+                            key={key}
+                            onClick={(() => setActiveCategory(category))}
+                            className={cn(
+                                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                                activeCategory === category ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover:bg-secondary"
                             )}>
                             {category}
                         </button>
                     ))}
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="flex flex-wrap justify-center gap-4">
                     {filteredSkills.map((skill, key) => (
-                        <div key={key} className="bg-card p-3 rounded-lg shadow-xs card-hover flex items-center gap-4">
+                        <div key={key} className="bg-card px-4 py-2 rounded-lg shadow-xs card-hover flex items-center gap-3 bg-secondary/50">
                             <div className="text-primary">
                                 {skill.icon}
                             </div>
-                            <div className="text-left">
-                                <h3 className="font-semibold text-lg">{skill.name}</h3>
-                            </div>
+                            <h3 className="font-semibold text-base">{skill.name}</h3>
                         </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );
