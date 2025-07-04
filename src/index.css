@@ -186,3 +186,78 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-up {
+  animation: scale-up 0.4s ease forwards;
+}
+
+@keyframes ping-slow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes bounce-fade {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.7;
+  }
+}
+
+.animate-bounce-fade {
+  animation: bounce-fade 1.5s ease-in-out infinite;
+}
+
+
+/* Pre-Loader CSS */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes fly-rtl {
+  0% {
+    transform: translateX(150vw) translateY(-50%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-150%) translateY(-50%);
+    opacity: 0;
+  }
+}
+
+.animate-fly-rtl {
+  animation: fly-rtl 3s ease-in-out infinite;
+}

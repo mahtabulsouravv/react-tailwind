@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bot, Code, Monitor, User, Book, Briefcase } from "lucide-react";
+import { Bot, Code, Monitor, User, Book, Briefcase, MapPin, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const AboutSection = () => {
@@ -31,46 +31,36 @@ export const AboutSection = () => {
                 );
             case "education":
                 return (
-                    <div className="space-y-4 animate-fade-in">
-                        <h3 className="text-2xl font-semibold mb-4">Education</h3>
-                        <ul className="space-y-4 text-muted-foreground">
-                            <li className="border-b pb-3 border-border/50">
-                                <div className="flex justify-between flex-wrap">
-                                    <span className="font-medium text-foreground">Computer Science and Engineering</span>
-                                    <span className="text-sm min-w-fit">{`2022 - Present`}</span>
+                    <div className="space-y-6 animate-fade-in">
+                        <h3 className="text-2xl font-semibold mb-6">Education</h3>
+                        <div className="space-y-6">
+                            {/* Current Education */}
+                            <div className="bg-gradient-to-r from-primary/5 to-transparent p-5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300">
+                                <div className="text-left space-y-1">
+                                    <h4 className="text-lg font-semibold text-foreground">Bangladesh University</h4>
+                                    <p className="text-sm text-muted-foreground font-medium">2023 - Present</p>
+                                    <p className="text-muted-foreground font-medium">Computer Science and Engineering</p>
+                                    <p className="text-sm text-muted-foreground">Dhaka, Bangladesh</p>
                                 </div>
-                                <p className="mt-1 text-left">Bangladesh University</p>
-                            </li>
-                            <li className="border-b pb-3 border-border/50">
-                                <div className="flex justify-between flex-wrap">
-                                    <span className="font-medium text-foreground">Full Stack Web Development</span>
-                                    <span className="text-sm min-w-fit">{`2022 - Present`}</span>
-                                </div>
-                                <p className="mt-1 text-left">freeCodeCamp</p>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 );
             case "experience":
                 return (
-                    <div className="space-y-4 animate-fade-in">
-                        <h3 className="text-2xl font-semibold mb-4">Experience</h3>
-                        <ul className="space-y-4 text-muted-foreground">
-                            <li className="border-b pb-3 border-border/50">
-                                <div className="flex justify-between flex-wrap">
-                                    <span className="font-medium text-foreground">Software Engineer Intern</span>
-                                    <span className="text-sm min-w-fit">{`2025`}</span>
+                    <div className="space-y-6 animate-fade-in">
+                        <h3 className="text-2xl font-semibold mb-6">Experience</h3>
+                        <div className="space-y-6">
+                            {/* Current Role */}
+                            <div className="bg-gradient-to-r from-primary/5 to-transparent p-5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300">
+                                <div className="text-left space-y-1">
+                                    <h4 className="text-lg font-semibold text-foreground">LynkeusAI</h4>
+                                    <p className="text-sm text-muted-foreground font-medium">2025</p>
+                                    <p className="text-muted-foreground font-medium">Software Engineer Intern</p>
+                                    <p className="text-sm text-muted-foreground">Remote</p>
                                 </div>
-                                <p className="mt-1 text-left">LynkeusAI</p>
-                            </li>
-                            <li className="border-b pb-3 border-border/50">
-                                <div className="flex justify-between flex-wrap">
-                                    <span className="font-medium text-foreground">Freelance Web & Desktop Developer</span>
-                                    <span className="text-sm min-w-fit">{`2021 - Present`}</span>
-                                </div>
-                                <p className="mt-1 text-left">Various Clients</p>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 );
             default:
@@ -88,20 +78,20 @@ export const AboutSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     {/* Left Part - Tabs */}
                     <div className="space-y-6">
-                        <div className="flex gap-4 mb-6">
+                        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 px-2">
                             {tabs.map(({ id, label, Icon }) => (
                                 <button
                                     key={id}
                                     onClick={() => setActiveTab(id)}
                                     className={cn(
-                                        "flex items-center gap-2 px-4 py-2 rounded-full transition-colors duration-300 text-sm font-medium shadow-sm",
+                                        "flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-full transition-colors duration-300 text-xs sm:text-sm font-medium shadow-sm flex-1 sm:flex-initial justify-center whitespace-nowrap",
                                         activeTab === id
                                             ? "bg-primary text-primary-foreground shadow-md scale-105"
                                             : "bg-secondary text-foreground hover:bg-secondary/70"
                                     )}
                                 >
-                                    <Icon className="w-5 h-5" />
-                                    {label}
+                                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                                    <span>{label}</span>
                                 </button>
                             ))}
                         </div>

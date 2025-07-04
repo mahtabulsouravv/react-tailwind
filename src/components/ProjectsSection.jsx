@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { LuLayoutTemplate, LuBrainCircuit } from "react-icons/lu";
 import { BsWindowSplit } from "react-icons/bs";
+import { ArrowRight } from "lucide-react";
 
 export const ProjectsSection = () => {
     const navigate = useNavigate();
@@ -49,6 +50,16 @@ export const ProjectsSection = () => {
                             <p className="text-base text-muted-foreground">{category.description}</p>
                         </div>
                     ))}
+                </div>
+
+                <div className="text-center mt-12">
+                    <a
+                    className="cosmic-button w-fit flex items-center mx-auto gap-2"
+                    target="_blank"
+                    href="https://github.com/mahtabulsouravv"
+                    >
+                        Check My Github Profile <ArrowRight size={16}/>
+                    </a>
                 </div>
 
             </div>
