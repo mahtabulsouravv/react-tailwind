@@ -2,7 +2,7 @@ import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
 import { cn } from '@/lib/utils';
 import {
-    SiPython, SiJavascript, SiHtml5, SiReact, SiTailwindcss, SiShadcnui, SiPostgresql, SiNumpy, SiScikitlearn,
+    SiCplusplus,SiPython, SiJavascript, SiHtml5, SiReact, SiTailwindcss, SiShadcnui, SiPostgresql, SiNumpy, SiScikitlearn,
     SiGit, SiObsidian, SiCanva, SiN8N, SiQt, SiSupabase, SiFastapi, SiSqlalchemy,SiGooglecolab,SiVercel,SiPostman,SiArchlinux
 } from "react-icons/si";
 
@@ -12,6 +12,7 @@ import { FaWindows } from "react-icons/fa";
 const skills = [
 
     // Programming Language
+    { name: "C++", category: "programing language", icon: <SiCplusplus size={20} /> },
     { name: "Python", category: "programing language", icon: <SiPython size={20} /> },
     { name: "JavaScript", category: "programing language", icon: <SiJavascript size={20} /> },
 

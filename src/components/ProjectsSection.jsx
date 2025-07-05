@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { LuLayoutTemplate, LuBrainCircuit } from "react-icons/lu";
 import { BsWindowSplit } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
 
 export const ProjectsSection = () => {
@@ -52,15 +53,29 @@ export const ProjectsSection = () => {
                     ))}
                 </div>
 
+
                 <div className="text-center mt-12">
                     <a
-                    className="cosmic-button w-fit flex items-center mx-auto gap-2"
-                    target="_blank"
-                    href="https://github.com/mahtabulsouravv"
+                        className="cosmic-button w-fit flex items-center mx-auto gap-2 group"
+                        target="_blank"
+                        href="https://github.com/mahtabulsouravv"
                     >
-                        Check My Github Profile <ArrowRight size={16}/>
+                        Check My Github Profile
+                        <span className="relative w-4 h-4">
+                            {/* GitHub icon (visible before hover) */}
+                            <FaGithub
+                                size={16}
+                                className="absolute inset-0 group-hover:opacity-0 transition-opacity duration-200"
+                            />
+                            {/* Arrow icon (visible on hover) */}
+                            <ArrowRight
+                                size={16}
+                                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                            />
+                        </span>
                     </a>
                 </div>
+
 
             </div>
         </section>

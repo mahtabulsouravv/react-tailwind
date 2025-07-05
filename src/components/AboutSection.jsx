@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Bot, Code, Monitor, User, Book, Briefcase, MapPin, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { FaFileDownload } from "react-icons/fa";
+import { GrContact } from "react-icons/gr";
+import { RiMailSendFill } from "react-icons/ri";
 
 export const AboutSection = () => {
     const [activeTab, setActiveTab] = useState("about");
@@ -23,10 +26,24 @@ export const AboutSection = () => {
                         <p className="text-muted-foreground">
                             I love solving real-world problems with elegant code and constantly explore new technologies.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center sm:justify-start">
-                            <a href="#contact" className="cosmic-button">Get In Touch</a>
-                            <a href="#contact" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">Download CV</a>
-                        </div>
+                        <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center sm:justify-center items-center">
+
+  {/* Get In Touch Button */}
+  <a href="#contact" className="cosmic-button flex items-center gap-2 justify-center">
+    <RiMailSendFill size={16} />
+    Get In Touch
+  </a>
+
+  {/* Download CV Button */}
+  <a
+    href="#contact"
+    className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 flex items-center gap-2 justify-center"
+  >
+    <FaFileDownload size={16} />
+    Download CV
+  </a>
+
+</div>
                     </div>
                 );
             case "education":
@@ -43,6 +60,15 @@ export const AboutSection = () => {
                                     <p className="text-sm text-muted-foreground">Dhaka, Bangladesh</p>
                                 </div>
                             </div>
+                            {/* Current Education */}
+                            <div className="bg-gradient-to-r from-primary/5 to-transparent p-5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300">
+                                <div className="text-left space-y-1">
+                                    <h4 className="text-lg font-semibold text-foreground">Mohammadpur Govt. College</h4>
+                                    <p className="text-sm text-muted-foreground font-medium">Jun 2019 - April 2021</p>
+                                    <p className="text-muted-foreground font-medium">Higher Secondary School Certificate (HSC)</p>
+                                    <p className="text-sm text-muted-foreground">Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 );
@@ -54,10 +80,10 @@ export const AboutSection = () => {
                             {/* Current Role */}
                             <div className="bg-gradient-to-r from-primary/5 to-transparent p-5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300">
                                 <div className="text-left space-y-1">
-                                    <h4 className="text-lg font-semibold text-foreground">LynkeusAI</h4>
-                                    <p className="text-sm text-muted-foreground font-medium">2025</p>
-                                    <p className="text-muted-foreground font-medium">Software Engineer Intern</p>
-                                    <p className="text-sm text-muted-foreground">Remote</p>
+                                    <h4 className="text-lg font-semibold text-foreground">Lynkeus - 린케우스</h4>
+                                    <p className="text-sm text-muted-foreground font-medium">Feb 2024 - March 2025</p>
+                                    <p className="text-muted-foreground font-medium">Former Intern</p>
+                                    <p className="text-sm text-muted-foreground">On-site</p>
                                 </div>
                             </div>
                         </div>
