@@ -19,7 +19,7 @@ function App() {
                 <Route path="/projects/web" element={<WebProjects />} />
                 <Route path="/projects/desktop" element={<DesktopProjects />} />
                 <Route path="/projects/ai" element={<AIProjects />} />
-                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blogs/tech" element={<BlogPage />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>

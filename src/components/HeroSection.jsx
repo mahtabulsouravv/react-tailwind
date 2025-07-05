@@ -24,7 +24,7 @@ export const HeroSection = () => {
                         <a href="#projects" className="cosmic-button">
                             View My Work
                         </a>
-                        <a href="/blog" className="cosmic-button">
+                        <a href="/blogs/tech" className="cosmic-button">
                             View My Blog
                         </a>
                     </div>
